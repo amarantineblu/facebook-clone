@@ -1,188 +1,982 @@
-<script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3';
-
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
-})
-</script>
-
 <template>
-    <Head title="Welcome" />
+    <BreezeAuthenticatedLayout>
 
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
-                Dashboard
-            </Link>
+        <section>
+            <div class="gap gray-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row merged20" id="page-contents">
+                                <div class="col-lg-3">
+                                    <aside class="sidebar static">
+                                        <div class="widget">
+                                            <h4 class="widget-title">Socials</h4>
+                                            <ul class="socials">
+                                                <li class="facebook">
+                                                    <a title="" href="#"><i class="fa fa-facebook"></i>
+                                                        <span>facebook</span> <ins>45 likes</ins></a>
+                                                </li>
+                                                <li class="twitter">
+                                                    <a title="" href="#"><i class="fa fa-twitter"></i>
+                                                        <span>twitter</span><ins>25 likes</ins></a>
+                                                </li>
+                                                <li class="google">
+                                                    <a title="" href="#"><i class="fa fa-google"></i>
+                                                        <span>google</span><ins>35 likes</ins></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="widget">
+                                            <h4 class="widget-title">Shortcuts</h4>
+                                            <ul class="naves">
+                                                <li>
+                                                    <i class="ti-clipboard"></i>
+                                                    <a href="newsfeed.html" title="">News feed</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-mouse-alt"></i>
+                                                    <a href="inbox.html" title="">Inbox</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-files"></i>
+                                                    <a href="fav-page.html" title="">My pages</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-user"></i>
+                                                    <a href="timeline-friends.html" title="">friends</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-image"></i>
+                                                    <a href="timeline-photos.html" title="">images</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-video-camera"></i>
+                                                    <a href="timeline-videos.html" title="">videos</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-comments-smiley"></i>
+                                                    <a href="messages.html" title="">Messages</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-bell"></i>
+                                                    <a href="notifications.html" title="">Notifications</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-share"></i>
+                                                    <a href="people-nearby.html" title="">People Nearby</a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-bar-chart-o"></i>
+                                                    <a href="insights.html" title="">insights</a>
+                                                </li>
+                                                <li>
+                                                    <i class="ti-power-off"></i>
+                                                    <a href="landing.html" title="">Logout</a>
+                                                </li>
+                                            </ul>
+                                        </div><!-- Shortcuts -->
+                                        <div class="widget">
+                                            <h4 class="widget-title">Recent Activity</h4>
+                                            <ul class="activitiez">
+                                                <li>
+                                                    <div class="activity-meta">
+                                                        <i>10 hours Ago</i>
+                                                        <span><a href="#" title="">Commented on Video posted </a></span>
+                                                        <h6>by <a href="newsfeed.html">black demon.</a></h6>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="activity-meta">
+                                                        <i>30 Days Ago</i>
+                                                        <span><a href="newsfeed.html" title="">Posted your status.
+                                                                “Hello guys, how are you?”</a></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="activity-meta">
+                                                        <i>2 Years Ago</i>
+                                                        <span><a href="#" title="">Share a video on her
+                                                                timeline.</a></span>
+                                                        <h6>"<a href="newsfeed.html">you are so funny mr.been.</a>"</h6>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div><!-- recent activites -->
+                                        <div class="widget stick-widget">
+                                            <h4 class="widget-title">Who's follownig</h4>
+                                            <ul class="followers">
+                                                <li>
+                                                    <figure><img src="/assets/images/resources/friend-avatar2.jpg"
+                                                            alt=""></figure>
+                                                    <div class="friend-meta">
+                                                        <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
+                                                        <a href="#" title="" class="underline">Add Friend</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure><img src="/assets/images/resources/friend-avatar4.jpg"
+                                                            alt=""></figure>
+                                                    <div class="friend-meta">
+                                                        <h4><a href="time-line.html" title="">Issabel</a></h4>
+                                                        <a href="#" title="" class="underline">Add Friend</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure><img src="/assets/images/resources/friend-avatar6.jpg"
+                                                            alt=""></figure>
+                                                    <div class="friend-meta">
+                                                        <h4><a href="time-line.html" title="">Andrew</a></h4>
+                                                        <a href="#" title="" class="underline">Add Friend</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure><img src="/assets/images/resources/friend-avatar8.jpg"
+                                                            alt=""></figure>
+                                                    <div class="friend-meta">
+                                                        <h4><a href="time-line.html" title="">Sophia</a></h4>
+                                                        <a href="#" title="" class="underline">Add Friend</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure><img src="/assets/images/resources/friend-avatar3.jpg"
+                                                            alt=""></figure>
+                                                    <div class="friend-meta">
+                                                        <h4><a href="time-line.html" title="">Allen</a></h4>
+                                                        <a href="#" title="" class="underline">Add Friend</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div><!-- who's following -->
+                                    </aside>
+                                </div><!-- sidebar -->
+                                <div class="col-lg-6">
+                                    <div class="loadMore">
+                                        <div class="central-meta new-pst item">
+                                            <div class="new-postbox">
+                                                <figure>
+                                                    <img src="/assets/images/resources/admin2.jpg" alt="">
+                                                </figure>
+                                                <div class="newpst-input">
+                                                    <form method="post">
+                                                        <textarea rows="2" placeholder="write something"></textarea>
+                                                        <div class="attachments">
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="fa fa-music"></i>
+                                                                    <label class="fileContainer">
+                                                                        <input type="file">
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-image"></i>
+                                                                    <label class="fileContainer">
+                                                                        <input type="file">
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-video-camera"></i>
+                                                                    <label class="fileContainer">
+                                                                        <input type="file">
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-camera"></i>
+                                                                    <label class="fileContainer">
+                                                                        <input type="file">
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <button type="submit">Publish</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div><!-- add post new box -->
+                                        <div class="central-meta item">
+                                            <div class="user-post">
+                                                <div class="friend-info">
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar10.jpg" alt="">
+                                                    </figure>
+                                                    <div class="friend-name">
+                                                        <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
+                                                        <span>published: june,2 2018 19:PM</span>
+                                                    </div>
+                                                    <div class="description">
 
-            <template v-else>
-                <Link :href="route('login')" class="text-sm text-gray-700 underline">
-                    Log in
-                </Link>
+                                                        <p>
+                                                            World's most beautiful car in Curabitur <a href="#"
+                                                                title="">#test drive booking !</a> the most beatuiful
+                                                            car available in america and the saudia arabia, you can book
+                                                            your test drive by our official website
+                                                        </p>
+                                                    </div>
+                                                    <div class="post-meta">
+                                                        <div class="linked-image align-left">
+                                                            <a href="#" title=""><img
+                                                                    src="/assets/images/resources/page1.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="detail">
+                                                            <span>Love Maid - ChillGroves</span>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur ipisicing elit,
+                                                                sed do eiusmod tempor incididunt ut labore et dolore
+                                                                magna aliqua... </p>
+                                                            <a href="#" title="">www.sample.com</a>
+                                                        </div>
+                                                        <div class="we-video-info">
+                                                            <ul>
 
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    Register
-                </Link>
-            </template>
-        </div>
+                                                                <li>
+                                                                    <span class="views" data-toggle="tooltip"
+                                                                        title="views">
+                                                                        <i class="fa fa-eye"></i>
+                                                                        <ins>1.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="comment" data-toggle="tooltip"
+                                                                        title="Comments">
+                                                                        <i class="fa fa-comments-o"></i>
+                                                                        <ins>52</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="like" data-toggle="tooltip"
+                                                                        title="like">
+                                                                        <i class="ti-heart"></i>
+                                                                        <ins>2.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="dislike" data-toggle="tooltip"
+                                                                        title="dislike">
+                                                                        <i class="ti-heart-broken"></i>
+                                                                        <ins>200</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li class="social-media">
+                                                                    <div class="menu">
+                                                                        <div class="btn trigger"><i
+                                                                                class="fa fa-share-alt"></i></div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-html5"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-facebook"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-google-plus"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-twitter"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-css3"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-instagram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-dribbble"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-pinterest"></i></a>
+                                                                            </div>
+                                                                        </div>
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                    <g clip-path="url(#clip0)" fill="#EF3B2D">
-                        <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                    </g>
-                </svg>
-            </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="central-meta item">
+                                            <div class="user-post">
+                                                <div class="friend-info">
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar10.jpg" alt="">
+                                                    </figure>
+                                                    <div class="friend-name">
+                                                        <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
+                                                        <span>published: june,2 2018 19:PM</span>
+                                                    </div>
+                                                    <div class="post-meta">
+                                                        <img src="/assets/images/resources/user-post.jpg" alt="">
+                                                        <div class="we-video-info">
+                                                            <ul>
 
-            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="p-6">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                        </div>
+                                                                <li>
+                                                                    <span class="views" data-toggle="tooltip"
+                                                                        title="views">
+                                                                        <i class="fa fa-eye"></i>
+                                                                        <ins>1.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="comment" data-toggle="tooltip"
+                                                                        title="Comments">
+                                                                        <i class="fa fa-comments-o"></i>
+                                                                        <ins>52</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="like" data-toggle="tooltip"
+                                                                        title="like">
+                                                                        <i class="ti-heart"></i>
+                                                                        <ins>2.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="dislike" data-toggle="tooltip"
+                                                                        title="dislike">
+                                                                        <i class="ti-heart-broken"></i>
+                                                                        <ins>200</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li class="social-media">
+                                                                    <div class="menu">
+                                                                        <div class="btn trigger"><i
+                                                                                class="fa fa-share-alt"></i></div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-html5"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-facebook"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-google-plus"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-twitter"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-css3"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-instagram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-dribbble"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-pinterest"></i></a>
+                                                                            </div>
+                                                                        </div>
 
-                        <div class="ml-12">
-                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                            </div>
-                        </div>
-                    </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="description">
 
-                    <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                        </div>
+                                                            <p>
+                                                                Curabitur world's most beautiful car in <a href="#"
+                                                                    title="">#test drive booking !</a> the most
+                                                                beatuiful car available in america and the saudia
+                                                                arabia, you can book your test drive by our official
+                                                                website
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="coment-area">
+                                                    <ul class="we-comet">
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5><a href="time-line.html" title="">Jason
+                                                                            borne</a></h5>
+                                                                    <span>1 year ago</span>
+                                                                    <a class="we-reply" href="#" title="Reply"><i
+                                                                            class="fa fa-reply"></i></a>
+                                                                </div>
+                                                                <p>we are working for the dance and sing songs. this car
+                                                                    is very awesome for the youngster. please vote this
+                                                                    car and like our post</p>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="comet-avatar">
+                                                                        <img src="/assets/images/resources/comet-2.jpg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="we-comment">
+                                                                        <div class="coment-head">
+                                                                            <h5><a href="time-line.html"
+                                                                                    title="">alexendra dadrio</a></h5>
+                                                                            <span>1 month ago</span>
+                                                                            <a class="we-reply" href="#"
+                                                                                title="Reply"><i
+                                                                                    class="fa fa-reply"></i></a>
+                                                                        </div>
+                                                                        <p>yes, really very awesome car i see the
+                                                                            features of this car in the official website
+                                                                            of <a href="#" title="">#Mercedes-Benz</a>
+                                                                            and really impressed :-)</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="comet-avatar">
+                                                                        <img src="/assets/images/resources/comet-3.jpg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="we-comment">
+                                                                        <div class="coment-head">
+                                                                            <h5><a href="time-line.html"
+                                                                                    title="">Olivia</a></h5>
+                                                                            <span>16 days ago</span>
+                                                                            <a class="we-reply" href="#"
+                                                                                title="Reply"><i
+                                                                                    class="fa fa-reply"></i></a>
+                                                                        </div>
+                                                                        <p>i like lexus cars, lexus cars are most
+                                                                            beautiful with the awesome features, but
+                                                                            this car is really outstanding than lexus
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-4.jpg" alt="">
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5><a href="time-line.html" title="">Donald
+                                                                            Trump</a></h5>
+                                                                    <span>1 week ago</span>
+                                                                    <a class="we-reply" href="#" title="Reply"><i
+                                                                            class="fa fa-reply"></i></a>
+                                                                </div>
+                                                                <p>we are working for the dance and sing songs. this
+                                                                    video is very awesome for the youngster. please vote
+                                                                    this video and like our channel
+                                                                    <i class="em em-smiley"></i>
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" title="" class="showmore underline">more
+                                                                comments</a>
+                                                        </li>
+                                                        <li class="post-comment">
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="post-comt-box">
+                                                                <form method="post">
+                                                                    <textarea
+                                                                        placeholder="Post your comment"></textarea>
+                                                                    <div class="add-smiles">
+                                                                        <span class="em em-expressionless"
+                                                                            title="add icon"></span>
+                                                                    </div>
+                                                                    <div class="smiles-bunch">
+                                                                        <i class="em em---1"></i>
+                                                                        <i class="em em-smiley"></i>
+                                                                        <i class="em em-anguished"></i>
+                                                                        <i class="em em-laughing"></i>
+                                                                        <i class="em em-angry"></i>
+                                                                        <i class="em em-astonished"></i>
+                                                                        <i class="em em-blush"></i>
+                                                                        <i class="em em-disappointed"></i>
+                                                                        <i class="em em-worried"></i>
+                                                                        <i class="em em-kissing_heart"></i>
+                                                                        <i class="em em-rage"></i>
+                                                                        <i class="em em-stuck_out_tongue"></i>
+                                                                    </div>
+                                                                    <button type="submit"></button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="central-meta item">
+                                            <div class="user-post">
+                                                <div class="friend-info">
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar10.jpg" alt="">
+                                                    </figure>
+                                                    <div class="friend-name">
+                                                        <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
+                                                        <span>published: june,2 2018 19:PM</span>
+                                                    </div>
+                                                    <div class="post-meta">
+                                                        <iframe width="" height="285"
+                                                            src="https://www.youtube.com/embed/_-StQsHSTz0"
+                                                            frameborder="0" allowfullscreen></iframe>
+                                                        <div class="we-video-info">
+                                                            <ul>
 
-                        <div class="ml-12">
-                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                            </div>
-                        </div>
-                    </div>
+                                                                <li>
+                                                                    <span class="views" data-toggle="tooltip"
+                                                                        title="views">
+                                                                        <i class="fa fa-eye"></i>
+                                                                        <ins>1.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="comment" data-toggle="tooltip"
+                                                                        title="Comments">
+                                                                        <i class="fa fa-comments-o"></i>
+                                                                        <ins>52</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="like" data-toggle="tooltip"
+                                                                        title="like">
+                                                                        <i class="ti-heart"></i>
+                                                                        <ins>2.2k</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="dislike" data-toggle="tooltip"
+                                                                        title="dislike">
+                                                                        <i class="ti-heart-broken"></i>
+                                                                        <ins>200</ins>
+                                                                    </span>
+                                                                </li>
+                                                                <li class="social-media">
+                                                                    <div class="menu">
+                                                                        <div class="btn trigger"><i
+                                                                                class="fa fa-share-alt"></i></div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-html5"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-facebook"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-google-plus"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-twitter"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-css3"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-instagram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-dribbble"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="rotater">
+                                                                            <div class="btn btn-icon"><a href="#"
+                                                                                    title=""><i
+                                                                                        class="fa fa-pinterest"></i></a>
+                                                                            </div>
+                                                                        </div>
 
-                    <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="description">
 
-                        <div class="ml-12">
-                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                            </div>
-                        </div>
-                    </div>
+                                                            <p>
+                                                                Lonely Cat Enjoying in Summer Curabitur <a href="#"
+                                                                    title="">#mypage</a> ullamcorper ultricies nisi. Nam
+                                                                eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
+                                                                condimentum rhoncus, sem quam semper libero, sit amet
+                                                                adipiscing sem neque sed ipsum. Nam quam nunc,
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="coment-area">
+                                                    <ul class="we-comet">
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5><a href="time-line.html" title="">Jason
+                                                                            borne</a></h5>
+                                                                    <span>1 year ago</span>
+                                                                    <a class="we-reply" href="#" title="Reply"><i
+                                                                            class="fa fa-reply"></i></a>
+                                                                </div>
+                                                                <p>we are working for the dance and sing songs. this
+                                                                    video is very awesome for the youngster. please vote
+                                                                    this video and like our channel</p>
+                                                            </div>
 
-                    <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                        </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-2.jpg" alt="">
+                                                            </div>
+                                                            <div class="we-comment">
+                                                                <div class="coment-head">
+                                                                    <h5><a href="time-line.html" title="">Sophia</a>
+                                                                    </h5>
+                                                                    <span>1 week ago</span>
+                                                                    <a class="we-reply" href="#" title="Reply"><i
+                                                                            class="fa fa-reply"></i></a>
+                                                                </div>
+                                                                <p>we are working for the dance and sing songs. this
+                                                                    video is very awesome for the youngster.
+                                                                    <i class="em em-smiley"></i>
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" title="" class="showmore underline">more
+                                                                comments</a>
+                                                        </li>
+                                                        <li class="post-comment">
+                                                            <div class="comet-avatar">
+                                                                <img src="/assets/images/resources/comet-2.jpg" alt="">
+                                                            </div>
+                                                            <div class="post-comt-box">
+                                                                <form method="post">
+                                                                    <textarea
+                                                                        placeholder="Post your comment"></textarea>
+                                                                    <div class="add-smiles">
+                                                                        <span class="em em-expressionless"
+                                                                            title="add icon"></span>
+                                                                    </div>
+                                                                    <div class="smiles-bunch">
+                                                                        <i class="em em---1"></i>
+                                                                        <i class="em em-smiley"></i>
+                                                                        <i class="em em-anguished"></i>
+                                                                        <i class="em em-laughing"></i>
+                                                                        <i class="em em-angry"></i>
+                                                                        <i class="em em-astonished"></i>
+                                                                        <i class="em em-blush"></i>
+                                                                        <i class="em em-disappointed"></i>
+                                                                        <i class="em em-worried"></i>
+                                                                        <i class="em em-kissing_heart"></i>
+                                                                        <i class="em em-rage"></i>
+                                                                        <i class="em em-stuck_out_tongue"></i>
+                                                                    </div>
+                                                                    <button type="submit"></button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- centerl meta -->
+                                <div class="col-lg-3">
+                                    <aside class="sidebar static">
+                                        <div class="widget">
+                                            <div class="banner medium-opacity bluesh">
+                                                <div style="background-image: url(images/resources/baner-widgetbg.jpg)"
+                                                    class="bg-image"></div>
+                                                <div class="baner-top">
+                                                    <span><img src="/assets/images/book-icon.png" alt=""></span>
+                                                    <i class="fa fa-ellipsis-h"></i>
+                                                </div>
+                                                <div class="banermeta">
+                                                    <p>
+                                                        create your own favourit page.
+                                                    </p>
+                                                    <span>like them all</span>
+                                                    <a href="#" title="" data-ripple="">start now!</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget friend-list stick-widget">
+                                            <h4 class="widget-title">Friends</h4>
+                                            <div id="searchDir"></div>
+                                            <ul id="people-list" class="friendz-list">
+                                                <li>
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar.jpg" alt="">
+                                                        <span class="status f-online"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">bucky barnes</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="91e6f8ffe5f4e3e2fefdf5f4e3d1f6fcf0f8fdbff2fefc">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar2.jpg" alt="">
+                                                        <span class="status f-away"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">Sarah Loren</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="86e4e7f4e8e3f5c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar3.jpg" alt="">
+                                                        <span class="status f-off"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">jason borne</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="e18b80928e8f83a1868c80888dcf828e8c">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar4.jpg" alt="">
+                                                        <span class="status f-off"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">Cameron diaz</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="026863716d6c6042656f636b6e2c616d6f">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
 
-                        <div class="ml-12">
-                            <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar5.jpg" alt="">
+                                                        <span class="status f-online"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">daniel warber</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="7e141f0d11101c3e19131f1712501d1113">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar6.jpg" alt="">
+                                                        <span class="status f-away"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">andrew</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="82e8e3f1edece0c2e5efe3ebeeace1edef">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar7.jpg" alt="">
+                                                        <span class="status f-off"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">amy watson</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="ec868d9f83828eac8b818d8580c28f8381">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar5.jpg" alt="">
+                                                        <span class="status f-online"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">daniel warber</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="2f454e5c40414d6f48424e4643014c4042">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+
+                                                    <figure>
+                                                        <img src="/assets/images/resources/friend-avatar2.jpg" alt="">
+                                                        <span class="status f-away"></span>
+                                                    </figure>
+                                                    <div class="friendz-meta">
+                                                        <a href="time-line.html">Sarah Loren</a>
+                                                        <i><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection"
+                                                                class="__cf_email__"
+                                                                data-cfemail="bbd9dac9d5dec8fbdcd6dad2d795d8d4d6">[email&#160;protected]</a></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="chat-box">
+                                                <div class="chat-head">
+                                                    <span class="status f-online"></span>
+                                                    <h6>Bucky Barnes</h6>
+                                                    <div class="more">
+                                                        <span><i class="ti-more-alt"></i></span>
+                                                        <span class="close-mesage"><i
+                                                                class="ti-close"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="chat-list">
+                                                    <ul>
+                                                        <li class="me">
+                                                            <div class="chat-thumb"><img
+                                                                    src="/assets/images/resources/chatlist1.jpg" alt="">
+                                                            </div>
+                                                            <div class="notification-event">
+                                                                <span class="chat-message-item">
+                                                                    Hi James! Please remember to buy the food for
+                                                                    tomorrow! I’m gonna be handling the gifts and Jake’s
+                                                                    gonna get the drinks
+                                                                </span>
+                                                                <span class="notification-date"><time
+                                                                        datetime="2004-07-24T18:18"
+                                                                        class="entry-date updated">Yesterday at
+                                                                        8:10pm</time></span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="you">
+                                                            <div class="chat-thumb"><img
+                                                                    src="/assets/images/resources/chatlist2.jpg" alt="">
+                                                            </div>
+                                                            <div class="notification-event">
+                                                                <span class="chat-message-item">
+                                                                    Hi James! Please remember to buy the food for
+                                                                    tomorrow! I’m gonna be handling the gifts and Jake’s
+                                                                    gonna get the drinks
+                                                                </span>
+                                                                <span class="notification-date"><time
+                                                                        datetime="2004-07-24T18:18"
+                                                                        class="entry-date updated">Yesterday at
+                                                                        8:10pm</time></span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="me">
+                                                            <div class="chat-thumb"><img
+                                                                    src="/assets/images/resources/chatlist1.jpg" alt="">
+                                                            </div>
+                                                            <div class="notification-event">
+                                                                <span class="chat-message-item">
+                                                                    Hi James! Please remember to buy the food for
+                                                                    tomorrow! I’m gonna be handling the gifts and Jake’s
+                                                                    gonna get the drinks
+                                                                </span>
+                                                                <span class="notification-date"><time
+                                                                        datetime="2004-07-24T18:18"
+                                                                        class="entry-date updated">Yesterday at
+                                                                        8:10pm</time></span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <form class="text-box">
+                                                        <textarea placeholder="Post enter to post..."></textarea>
+                                                        <div class="add-smiles">
+                                                            <span title="add icon" class="em em-expressionless"></span>
+                                                        </div>
+                                                        <div class="smiles-bunch">
+                                                            <i class="em em---1"></i>
+                                                            <i class="em em-smiley"></i>
+                                                            <i class="em em-anguished"></i>
+                                                            <i class="em em-laughing"></i>
+                                                            <i class="em em-angry"></i>
+                                                            <i class="em em-astonished"></i>
+                                                            <i class="em em-blush"></i>
+                                                            <i class="em em-disappointed"></i>
+                                                            <i class="em em-worried"></i>
+                                                            <i class="em em-kissing_heart"></i>
+                                                            <i class="em em-rage"></i>
+                                                            <i class="em em-stuck_out_tongue"></i>
+                                                        </div>
+                                                        <button type="submit"></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div><!-- friends list sidebar -->
+                                    </aside>
+                                </div><!-- sidebar -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                <div class="text-center text-sm text-gray-500 sm:text-left">
-                    <div class="flex items-center">
-                        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-
-                        <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                            Shop
-                        </a>
-
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                            <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-
-                        <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                            Sponsor
-                        </a>
-                    </div>
-                </div>
-
-                <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                    Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
+    </BreezeAuthenticatedLayout>
 </template>
 
-<style scoped>
-    .bg-gray-100 {
-        background-color: #f7fafc;
-        background-color: rgba(247, 250, 252, var(--tw-bg-opacity));
-    }
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+</script>
 
-    .border-gray-200 {
-        border-color: #edf2f7;
-        border-color: rgba(237, 242, 247, var(--tw-border-opacity));
-    }
+<style lang="scss" scoped>
 
-    .text-gray-400 {
-        color: #cbd5e0;
-        color: rgba(203, 213, 224, var(--tw-text-opacity));
-    }
-
-    .text-gray-500 {
-        color: #a0aec0;
-        color: rgba(160, 174, 192, var(--tw-text-opacity));
-    }
-
-    .text-gray-600 {
-        color: #718096;
-        color: rgba(113, 128, 150, var(--tw-text-opacity));
-    }
-
-    .text-gray-700 {
-        color: #4a5568;
-        color: rgba(74, 85, 104, var(--tw-text-opacity));
-    }
-
-    .text-gray-900 {
-        color: #1a202c;
-        color: rgba(26, 32, 44, var(--tw-text-opacity));
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .dark\:bg-gray-800 {
-            background-color: #2d3748;
-            background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
-        }
-
-        .dark\:bg-gray-900 {
-            background-color: #1a202c;
-            background-color: rgba(26, 32, 44, var(--tw-bg-opacity));
-        }
-
-        .dark\:border-gray-700 {
-            border-color: #4a5568;
-            border-color: rgba(74, 85, 104, var(--tw-border-opacity));
-        }
-
-        .dark\:text-white {
-            color: #fff;
-            color: rgba(255, 255, 255, var(--tw-text-opacity));
-        }
-
-        .dark\:text-gray-400 {
-            color: #cbd5e0;
-            color: rgba(203, 213, 224, var(--tw-text-opacity));
-        }
-    }
 </style>
+//

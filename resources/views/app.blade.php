@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<!-- Mirrored from www.wpkixx.com/html/winku/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Mar 2022 10:31:36 GMT -->
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Winku Social Network Toolkit</title>
+    <link rel="icon" href="/assets/images/fav.png" type="image/png" sizes="16x16">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/color.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    @routes
+    <script src="{{mix('js/app.js')}}" defer></script>
 
-        <!-- Scripts -->
-        @routes
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
+</head>
 
-        @env ('local')
-            <script src="http://localhost:8080/js/bundle.js"></script>
-        @endenv
-    </body>
+<body>
+
+    @inertia
+
+    <script data-cfasync="false" src="http://www.wpkixx.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   defer </script>
+    <script src="/assets/js/main.min.js"defer></script>
+    <script src="/assets/js/script.js"defer></script>
+
+</body>
+
+<!-- Mirrored from www.wpkixx.com/html/winku/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Mar 2022 10:31:36 GMT -->
+
 </html>
